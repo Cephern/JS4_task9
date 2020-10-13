@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+#vue-app {
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "inputs output";
+  grid-gap: 40px;
+  justify-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#title {
+  grid-area: title;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 20px;
+  width: 60%;
+}
+
+#inputs {
+  grid-area: inputs;
+}
+
+#inputs .input-single {
+  display: grid;
+  grid-template-areas:
+    "rgb number"
+    "rgb range";
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+
+#inputs .input-single label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: rgb;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #000;
+  margin-right: 10px;
+}
+
+#inputs .input-single:nth-child(1) {
+  color: #d7385e;
+}
+
+#inputs .input-single:nth-child(2) {
+  color: #b8de6f;
+}
+
+#inputs .input-single:nth-child(3) {
+  color: #01c5c4;
+  margin-bottom: 0;
+}
+
+#inputs .input-single input[type="number"] {
+  grid-area: number;
+  padding: 0 5px;
+  width: 90%;
+}
+
+#inputs .input-single input[type="range"] {
+  grid-area: range;
+}
+
+#output {
+  grid-area: output;
+  width: 300px;
+  height: 100%;
+  border: 2px solid #000;
+  border-radius: 20px;
+}

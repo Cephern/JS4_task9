@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task9</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <div id="title" v-bind:style="{backgroundColor: startingColor.rgb}">
+        <h1>Микшер цветов</h1>
+        <h2>Vue</h2>
+      </div>
+
+      <div id="inputs">
+        <div class="input-single">
+          <label for="r">R</label>
+          <input
+            v-on:input="change('r', 'r_i')"
+            ref="r_i"
+            v-bind:value="r"
+            type="number"
+            placeholder="0 - 255"
+            min="0"
+            max="255"
+          />
+          <input
+            type="range"
+            name="r"
+            min="0"
+            max="255"
+            step="1"
+            value="0"
+            v-on:input="change('r', 'r_s')"
+            ref="r_s"
+            v-bind:value="r"
+          />
+        </div>
+
+        <div class="input-single">
+          <label for="g">G</label>
+          <input
+            type="number"
+            placeholder="0 - 255"
+            min="0"
+            max="255"
+            v-on:input="change('g', 'g_i')"
+            ref="g_i"
+            v-bind:value="g"
+          />
+          <input
+            type="range"
+            name="g"
+            min="0"
+            max="255"
+            step="1"
+            value="0"
+            v-on:input="change('g', 'g_s')"
+            ref="g_s"
+            v-bind:value="g"
+          />
+        </div>
+
+        <div class="input-single">
+          <label for="b">B</label>
+          <input
+            type="number"
+            placeholder="0 - 255"
+            min="0"
+            max="255"
+            v-on:input="change('b', 'b_i')"
+            ref="b_i"
+            v-bind:value="b"
+          />
+          <input
+            type="range"
+            name="b"
+            min="0"
+            max="255"
+            step="1"
+            value="0"
+            v-on:input="change('b', 'b_s')"
+            ref="b_s"
+            v-bind:value="b"
+          />
+        </div>
+      </div>
+
+      <div id="output" v-bind:style="{backgroundColor: rgb}"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
